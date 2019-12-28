@@ -1,19 +1,26 @@
+package AbstractFactory;
+
 //영업을 하는 A씨는 고객관리를 하기 위해 국내와 국외 고객에 대한 주소 및 전화번호를 국가에 맞게 생성하고 싶다
 
 public class Client {
-	public void main(String[] args) throws Exception{
-		KorZip korZip = new KorZip; 
-		KorPhoneNum korPhoneNum = new KorPhoneNum;
-		System.out.println("지역번호가 " + NATION_CODE +"인 전화번호 입니다.")
+	public static void main(String[] args) throws Exception{
+
+		KorZip korZip = new KorZip(); 
+		KorPhoneNum korPhoneNum = new KorPhoneNum();
+		System.out.println("지역번호가 " + korPhoneNum.getNationCode() +"인 전화번호 입니다.");
 		Client client = new Client();
 		korZip = client.createKorZip("Korea");
-		korPhoneNum = client.createPhoneNum("Korea")
+		korPhoneNum = client.createPhoneNum("Korea");
 		
 		System.out.println("주소" + korZip.getTheirAddress());
 		System.out.println("전화번호 : (" + korPhoneNum.getNationCode() + ") " + korPhoneNum.getPhoneNum());
 	}
+	private KorZip createKorZip(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-	public KRAddress createAddress(String countryType) {
+	public KorZip createAddress(String countryType) {
 		KorZip korZip = null;
 		
 		if (countryType.equals("Korea")) {
@@ -29,10 +36,10 @@ public class Client {
 		return korZip;
 	}
 
-	public KorPhoneNum createPhoneNum(String NationType) {
+	public KorPhoneNum createPhoneNum(String NationCode) {
 		KorPhoneNum korPhoneNum = null;
 		
-		if (countryType.equals("Korea")) {
+		if (NationCode.equals("82")) {
 			korPhoneNum = new KorPhoneNum();
 			
 			korPhoneNum.setPhoneNum("02-2002-2002");

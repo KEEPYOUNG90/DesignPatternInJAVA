@@ -1,3 +1,5 @@
+package AbstractFactory;
+
 //영업을 하는 A씨는 고객관리를 하기 위해 국내와 국외 고객에 대한 주소 및 전화번호를 국가에 맞게 생성하고 싶다
 
 public class KorZip{
@@ -13,11 +15,11 @@ public class KorZip{
 	}
 
 	public String setZipCode(String zipCode){
-		this.zipCode = zipCode;
+		return this.zipCode = zipCode;
 	}
 	
-	public String getNation;() {
-		return nation;;
+	public String getNation() {
+		return nation;
 	}
 
 	public void setNation(String nation) {
